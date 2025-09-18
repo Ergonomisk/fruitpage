@@ -4,7 +4,7 @@ require 'sinatra/reloader'
 
 get ('/') do
   @banandata="erik"
-  slim(:start)
+
 end
 
 get ('/home') do
@@ -27,6 +27,23 @@ get ('/fruits/:id')do
   slim(:visafrukt)
 
 end
+
+get('/fruktinfo')do
+  @fruktinfo = [ 
+      {
+        "namn" => "Bruten_fo",
+        "vikt" => "4kg",
+        "färg" => "blå"
+      }, 
+      {
+        "namn" => "kaled",
+        "vikt" => "7kg",
+        "färg" => "röd"
+      }
+    ]
+    slim(:fruktinfo)
+end
+
 
 
 
