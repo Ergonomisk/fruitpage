@@ -1,0 +1,10 @@
+- @databasanimals.each do |animal|
+    h3 
+        a href="/animals/#{animal["id"]}/edit" 
+            |#{animal["name"]}
+    p In stock: #{animal["amount"]} styck
+
+    form action="/animals/#{animal["id"]}/delete" method="post" 
+        input type="submit" value="ta bort 🤣😒"
+
+hr

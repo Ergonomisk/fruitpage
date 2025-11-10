@@ -1,0 +1,17 @@
+h1 Sök efter en frukt form 
+
+form action="/fruitser" method="get"
+    input name="q" placeholder="sök på en fruh" type="text"
+    input type="submit" value="sök!"
+
+h1 alla frukter
+- @datafrukt.each do |fruit|
+    h3 
+        a href="/fruitser/#{fruit["id"]}/edit" 
+            |#{fruit["name"]}
+    p In stock: #{fruit["amount"]} styck
+
+    form action="/fruitser/#{fruit["id"]}/delete" method="post" 
+        input type="submit" value="ta bort 🤣😒"
+
+    hr
